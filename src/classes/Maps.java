@@ -506,6 +506,9 @@ public class Maps {
 
     }
 
+    /**
+     * pinta la hierba en el suelo
+     */
     public static void paintingGrass(){
         int tilePositionY = 0;
         int tilePositionX;

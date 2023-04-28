@@ -33,6 +33,7 @@ public class Dungeon {
         frame.pack();
 
 
+        //vuelve visible el frame
         frame.setVisible(true);
 
 
