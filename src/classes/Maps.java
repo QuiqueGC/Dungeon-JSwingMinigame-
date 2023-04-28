@@ -35,7 +35,9 @@ public class Maps {
             } else {
                 x *= Labels.TILE_SIZE;
                 y *= Labels.TILE_SIZE;
+
                 label.setLocation(x, y);
+
                 if (x <= Labels.TILE_SIZE * 7) {
                     if (y >= Labels.TILE_SIZE * 15) {
                         colission = true;

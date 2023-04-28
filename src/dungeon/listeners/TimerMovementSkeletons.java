@@ -14,6 +14,8 @@ import java.awt.event.ActionListener;
 public class TimerMovementSkeletons implements ActionListener {
     Monster monster;
     JLabel labelMonster;
+
+    JLabel labelHitBoxMonster;
     int lookingToGoodPlace = 0;
 
     int direction = (int) (Math.random() * (4 - 1 + 1) + 1);
@@ -21,10 +23,10 @@ public class TimerMovementSkeletons implements ActionListener {
     //esta variable será usada para los cambios de dirección "impredecibles" cuando dejen de atascárseme las putas labels
     int perpendicularChangeMovement;
 
-    public TimerMovementSkeletons(JLabel labelMonster, Monster monster) {
+    public TimerMovementSkeletons(JLabel labelMonster, JLabel labelHitBoxMonster, Monster monster) {
         this.labelMonster = labelMonster;
         this.monster = monster;
-
+        this.labelHitBoxMonster = labelHitBoxMonster;
 
     }
 
@@ -42,7 +44,7 @@ public class TimerMovementSkeletons implements ActionListener {
 
                 lookingToGoodPlace = labelLookingRightDirection(lookingToGoodPlace);
 
-               direction = monster.monsterMovingRight(labelMonster, direction);
+               direction = monster.monsterMovingRight(labelMonster, labelHitBoxMonster, direction);
 
                 if (perpendicularChangeMovement >= randomAux) {
                     perpendicularChangeMovement = 0;
@@ -57,7 +59,7 @@ public class TimerMovementSkeletons implements ActionListener {
             case 2: {
                 lookingToGoodPlace = labelLookingLeftDirection(lookingToGoodPlace);
 
-                direction = monster.monsterMovingLeft(labelMonster, direction);
+                direction = monster.monsterMovingLeft(labelMonster, labelHitBoxMonster, direction);
 
                 if (perpendicularChangeMovement >= randomAux) {
                     perpendicularChangeMovement = 0;
@@ -71,7 +73,7 @@ public class TimerMovementSkeletons implements ActionListener {
             case 3: {
                 lookingToGoodPlace = labelLookingUpDirection(lookingToGoodPlace);
 
-                direction = monster.monsterMovingUp(labelMonster, direction);
+                direction = monster.monsterMovingUp(labelMonster, labelHitBoxMonster, direction);
 
                 if (perpendicularChangeMovement >= randomAux) {
                     perpendicularChangeMovement = 0;
@@ -85,7 +87,7 @@ public class TimerMovementSkeletons implements ActionListener {
             case 4: {
                 lookingToGoodPlace = labelLookingDownDirection(lookingToGoodPlace);
 
-                direction = monster.monsterMovingDown(labelMonster, direction);
+                direction = monster.monsterMovingDown(labelMonster, labelHitBoxMonster, direction);
 
                 if (perpendicularChangeMovement >= randomAux) {
                     perpendicularChangeMovement = 0;

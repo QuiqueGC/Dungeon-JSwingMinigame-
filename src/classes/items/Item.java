@@ -11,7 +11,7 @@ public interface Item {
      * uso del propio objeto
      * @param labelMonster la JLabel del monstruo en el que puede tener efecto el objeto
      */
-    public abstract void useItem(JLabel labelMonster);
+    public abstract void useItem(JLabel labelMonster, JLabel hitBoxMonster);
 
 
 }

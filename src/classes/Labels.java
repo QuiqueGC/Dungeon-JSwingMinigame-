@@ -12,17 +12,25 @@ public class Labels {
     public static JLabel labelName, labelCharacterStats,labelSwordStats, labelMagicStaffStats, labelMedallionStats, labelGoldText, labelDragon;
     private static JLabel labelLives, labelBag, labelGoldStats, labelDivisionLine, labelDivisionLine2;
     public static ArrayList<JLabel> labelHearts;
-    public static ArrayList<JLabel> walls;
-    public static ArrayList<JLabel> labelsSkels;
 
     public final static int MARGIN=8;
+
     //labels de panel de juego---------------------------------------------------------------------------------
-    public static JLabel labelCharacter, labelFloor, labelTime, labelSkeleton, labelSword, labelMagicStaff, labelMedallion, labelGold;
+    public static JLabel labelCharacter, labelFloor, labelSkeleton,
+            labelSword, labelMagicStaff, labelMedallion,
+            labelGold, labelHitBoxCharacter, labelHitBoxMonster,  labelHitBoxDragon;
 
     //el botón de pausa (no sé en qué clase meterlo)
     public static JButton buttonPause;
 
+    public static int hitBoxDiference = 12;
+
     public static final int TILE_SIZE = 32;
+
+    public static ArrayList<JLabel> walls;
+    public static ArrayList<JLabel> labelsSkels;
+
+    public static ArrayList<JLabel> labelsHitBoxMonsters;
 
 
     /**
@@ -258,7 +266,10 @@ public class Labels {
         labelDragon = new JLabel();
         Maps.labelIconCreation(labelDragon, "src/img/dungeon/dragon_left.gif", 192, 128, Panels.panelGaming);
         labelDragon.setLocation(Panels.panelGaming.getWidth(), Panels.panelGaming.getHeight());
-
+        //hitBox del dragón
+        labelHitBoxDragon = new JLabel();
+        labelHitBoxDragon.setSize(labelDragon.getWidth()-hitBoxDiference,labelDragon.getHeight()-hitBoxDiference);
+        Panels.panelGaming.add(labelHitBoxDragon);
 
 
         //creación de label de botón de pausa
@@ -283,15 +294,26 @@ public class Labels {
         Maps.labelIconCreation(labelCharacter, null, 48, 48, Panels.panelGaming);
         labelCharacter.setLocation(TILE_SIZE*3, TILE_SIZE*17);
 
+        //hitBox del personaje
+        labelHitBoxCharacter = new JLabel();
+        labelHitBoxCharacter.setSize(labelCharacter.getWidth()-hitBoxDiference,labelCharacter.getHeight()-hitBoxDiference);
+        labelHitBoxCharacter.setLocation(labelCharacter.getX()+hitBoxDiference, labelCharacter.getY()+hitBoxDiference);
+        Panels.panelGaming.add(labelHitBoxCharacter);
 
-        //labels de monstruos
+
+        //labels de monstruos y sus hitBox
          labelsSkels = new ArrayList<>();
+        labelsHitBoxMonsters = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
+            labelHitBoxMonster = new JLabel();
             labelSkeleton = new JLabel();
             Maps.labelIconCreation(labelSkeleton, null, 32, 48, Panels.panelGaming);
-            //pongo esta location de prueba, para ver si aparece en modo random;
             labelsSkels.add(labelSkeleton);
+            labelHitBoxMonster.setSize(labelSkeleton.getWidth()-hitBoxDiference,labelSkeleton.getHeight()-hitBoxDiference);
+            labelsHitBoxMonsters.add(labelHitBoxMonster);
         }
+
+
 
         //colocación de espada en el tablero
         labelSword = new JLabel();
@@ -329,7 +351,10 @@ public class Labels {
         for (JLabel m : labelsSkels
         ) {
             Maps.checkingDeployimentColissionBorn(m);
+        }
+        for (int i = 0; i < 10; i++) {
 
+            labelsHitBoxMonsters.get(i).setLocation(labelsSkels.get(i).getX()+hitBoxDiference, labelsSkels.get(i).getY()+hitBoxDiference);
         }
 
     }

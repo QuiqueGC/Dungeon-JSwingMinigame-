@@ -30,7 +30,7 @@ public class Necromancer extends Character {
      * @param labelMonster JLabel del monstruo con el que colisiona
      */
     @Override
-    public void contactVSMonster(Monster monster, JLabel labelMonster) {
+    public void contactVSMonster(Monster monster, JLabel labelMonster, JLabel labelHitBoxMonster) {
         ArrayList<Item> aux = this.inventory;
         int loops = 0;
         int indexToDelete = 0;
@@ -42,7 +42,7 @@ public class Necromancer extends Character {
                 itemExists = true;
                 indexToDelete = loops;
 
-                item.useItem(labelMonster);
+                item.useItem(labelMonster, labelHitBoxMonster);
 
             }
             loops++;

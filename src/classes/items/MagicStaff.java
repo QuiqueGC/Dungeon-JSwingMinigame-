@@ -17,7 +17,7 @@ public class MagicStaff implements Item {
      * @param labelMonster la JLabel del monstruo en el que puede tener efecto el objeto
      */
     @Override
-    public void useItem(JLabel labelMonster) {
+    public void useItem(JLabel labelMonster, JLabel labelHitBoxMonster) {
         int index;
 
         Labels.labelMagicStaffStats.setVisible(false);

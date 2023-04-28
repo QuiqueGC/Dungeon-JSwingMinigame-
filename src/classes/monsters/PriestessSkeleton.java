@@ -23,8 +23,8 @@ public class PriestessSkeleton extends Monster {
      * @param labelMonster la JLabel que pertenece al monstruo
      */
     @Override
-    public void monsterAttack(JLabel labelMonster) {
-        super.monsterAttack(labelMonster);
+    public void monsterAttack(JLabel labelMonster, JLabel labelHitBoxMonster) {
+        super.monsterAttack(labelMonster, labelHitBoxMonster);
 
         this.speed += 4;
     }

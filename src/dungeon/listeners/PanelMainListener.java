@@ -32,14 +32,14 @@ public class PanelMainListener extends KeyAdapter {
 
             case KeyEvent.VK_RIGHT -> {
 
-                whereHeLookingFor = labelLookingRightDirection(Labels.labelCharacter,whereHeLookingFor);
+                whereHeLookingFor = labelLookingRightDirection(whereHeLookingFor);
 
                 Dungeon.character.characterMovingRight();
 
             }
             case KeyEvent.VK_LEFT -> {
 
-                whereHeLookingFor = labelLookingLeftDirection(Labels.labelCharacter,whereHeLookingFor);
+                whereHeLookingFor = labelLookingLeftDirection(whereHeLookingFor);
 
                 Dungeon.character.characterMovingLeft();
             }
@@ -47,7 +47,7 @@ public class PanelMainListener extends KeyAdapter {
             case KeyEvent.VK_UP -> {
 
 
-                whereHeLookingFor = labelLookingUpDirection(Labels.labelCharacter,whereHeLookingFor);
+                whereHeLookingFor = labelLookingUpDirection(whereHeLookingFor);
 
                 Dungeon.character.characterMovingUp();
 
@@ -57,7 +57,7 @@ public class PanelMainListener extends KeyAdapter {
             case KeyEvent.VK_DOWN -> {
 
 
-                whereHeLookingFor = labelLookingDownDirection(Labels.labelCharacter,whereHeLookingFor);
+                whereHeLookingFor = labelLookingDownDirection(whereHeLookingFor);
 
                 Dungeon.character.characterMovingDown();
 
@@ -86,13 +86,12 @@ public class PanelMainListener extends KeyAdapter {
 
     /**
      * chequea que la JLabel esté mirando hacia la derecha y, en caso de que no sea así, lo cambia
-     * @param labelCharacter la JLabel que queremos chequear
      * @param lookingToGoodPlace int que indica la dirección hacia la que mira
      * @return lookingToGoodPlace con la dirección hacia la que está mirando una vez corregida
      */
-    public static int labelLookingRightDirection(JLabel labelCharacter, int lookingToGoodPlace) {
+    public static int labelLookingRightDirection(int lookingToGoodPlace) {
         if (lookingToGoodPlace != 1) {
-            Maps.changingIconInALabel(Dungeon.character.getRightLooking(), labelCharacter);
+            Maps.changingIconInALabel(Dungeon.character.getRightLooking(), Labels.labelCharacter);
             lookingToGoodPlace = 1;
         }
         return lookingToGoodPlace;
@@ -104,9 +103,9 @@ public class PanelMainListener extends KeyAdapter {
      * @param lookingToGoodPlace int que indica la dirección hacia la que mira
      * @return lookingToGoodPlace con la dirección hacia la que está mirando una vez corregida
      */
-    public static int labelLookingLeftDirection(JLabel labelCharacter, int lookingToGoodPlace) {
+    public static int labelLookingLeftDirection(int lookingToGoodPlace) {
         if (lookingToGoodPlace != 2) {
-            Maps.changingIconInALabel(Dungeon.character.getLeftLooking(), labelCharacter);
+            Maps.changingIconInALabel(Dungeon.character.getLeftLooking(), Labels.labelCharacter);
             lookingToGoodPlace = 2;
         }
         return lookingToGoodPlace;
@@ -118,9 +117,9 @@ public class PanelMainListener extends KeyAdapter {
      * @param lookingToGoodPlace int que indica la dirección hacia la que mira
      * @return lookingToGoodPlace con la dirección hacia la que está mirando una vez corregida
      */
-    public static int labelLookingUpDirection(JLabel labelCharacter, int lookingToGoodPlace) {
+    public static int labelLookingUpDirection(int lookingToGoodPlace) {
         if (lookingToGoodPlace != 3) {
-            Maps.changingIconInALabel(Dungeon.character.getUpLooking(), labelCharacter);
+            Maps.changingIconInALabel(Dungeon.character.getUpLooking(), Labels.labelCharacter);
             lookingToGoodPlace = 3;
         }
         return lookingToGoodPlace;
@@ -132,9 +131,9 @@ public class PanelMainListener extends KeyAdapter {
      * @param lookingToGoodPlace int que indica la dirección hacia la que mira
      * @return lookingToGoodPlace con la dirección hacia la que está mirando una vez corregida
      */
-    public static int labelLookingDownDirection(JLabel labelCharacter, int lookingToGoodPlace) {
+    public static int labelLookingDownDirection(int lookingToGoodPlace) {
         if (lookingToGoodPlace != 4) {
-            Maps.changingIconInALabel(Dungeon.character.getDownLooking(), labelCharacter);
+            Maps.changingIconInALabel(Dungeon.character.getDownLooking(), Labels.labelCharacter);
             lookingToGoodPlace = 4;
         }
         return lookingToGoodPlace;

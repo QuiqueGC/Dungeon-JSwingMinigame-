@@ -81,14 +81,16 @@ abstract public class Monster {
      * @param direction int que indica la dirección hacia la que está yendo el monstruo
      * @return int con la dirección hacia la que irá el monstruo
      */
-    public int monsterMovingRight(JLabel labelMonster, int direction) {
+    public int monsterMovingRight(JLabel labelMonster,JLabel labelHitBoxMonster, int direction) {
        int x = labelMonster.getX()+this.speed;
         boolean wallCollision = false;
         int checkingY = labelMonster.getY()/Labels.TILE_SIZE;
         int checkingX = x/Labels.TILE_SIZE;
 
-        if (labelMonster.getBounds().intersects(Labels.labelCharacter.getBounds())) {
-        monsterAttack(labelMonster);}
+        if (labelHitBoxMonster.getBounds().intersects(Labels.labelHitBoxCharacter.getBounds())) {
+
+        monsterAttack(labelMonster, labelHitBoxMonster);
+        }
 
         if (labelMonster.getX() + labelMonster.getWidth() >= Panels.panelGaming.getWidth() - Labels.TILE_SIZE * 2) {
             wallCollision = true;
@@ -113,6 +115,8 @@ abstract public class Monster {
         }
         if (!wallCollision) {
             labelMonster.setLocation(x, labelMonster.getY());
+            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.hitBoxDiference, labelMonster.getY()+Labels.hitBoxDiference);
+
         }
         return direction;
     }
@@ -123,14 +127,16 @@ abstract public class Monster {
      * @param direction int que indica la dirección hacia la que está yendo el monstruo
      * @return int con la dirección hacia la que irá el monstruo
      */
-    public int monsterMovingLeft(JLabel labelMonster, int direction) {
+    public int monsterMovingLeft(JLabel labelMonster,JLabel labelHitBoxMonster, int direction) {
        int x = labelMonster.getX()-this.speed;
         boolean wallCollision = false;
         int checkingY = labelMonster.getY()/Labels.TILE_SIZE;
         int checkingX = x/Labels.TILE_SIZE;
 
-        if (labelMonster.getBounds().intersects(Labels.labelCharacter.getBounds())) {
-       monsterAttack(labelMonster);}
+        if (labelHitBoxMonster.getBounds().intersects(Labels.labelHitBoxCharacter.getBounds())) {
+
+       monsterAttack(labelMonster, labelHitBoxMonster);
+        }
 
 
         if (labelMonster.getX() <= Panels.panelGaming.getX() + Labels.TILE_SIZE * 2) {
@@ -156,6 +162,7 @@ abstract public class Monster {
         }
         if (!wallCollision) {
             labelMonster.setLocation(x, labelMonster.getY());
+            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.hitBoxDiference, labelMonster.getY()+Labels.hitBoxDiference);
         }
         return direction;
     }
@@ -166,14 +173,14 @@ abstract public class Monster {
      * @param direction int que indica la dirección hacia la que está yendo el monstruo
      * @return int con la dirección hacia la que irá el monstruo
      */
-    public int monsterMovingUp(JLabel labelMonster, int direction) {
+    public int monsterMovingUp(JLabel labelMonster,JLabel labelHitBoxMonster, int direction) {
        int y = labelMonster.getY()-this.speed;
         boolean wallCollision = false;
         int checkingY = y/Labels.TILE_SIZE;
         int checkingX = labelMonster.getX()/Labels.TILE_SIZE;
 
-        if (labelMonster.getBounds().intersects(Labels.labelCharacter.getBounds())) {
-        monsterAttack(labelMonster);}
+        if (labelHitBoxMonster.getBounds().intersects(Labels.labelHitBoxCharacter.getBounds())) {
+        monsterAttack(labelMonster, labelHitBoxMonster);}
 
 
         if (labelMonster.getY() <= Panels.panelGaming.getY() + Labels.TILE_SIZE * 2) {
@@ -198,6 +205,7 @@ abstract public class Monster {
         }
         if (!wallCollision) {
             labelMonster.setLocation(labelMonster.getX(), y);
+            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.hitBoxDiference, labelMonster.getY()+Labels.hitBoxDiference);
         }
 
         return direction;
@@ -209,15 +217,15 @@ abstract public class Monster {
      * @param direction int que indica la dirección hacia la que está yendo el monstruo
      * @return int con la dirección hacia la que irá el monstruo
      */
-    public int monsterMovingDown(JLabel labelMonster, int direction) {
+    public int monsterMovingDown(JLabel labelMonster,JLabel labelHitBoxMonster, int direction) {
         int y = labelMonster.getY()+this.speed;
         boolean wallCollision = false;
         int checkingY = y/Labels.TILE_SIZE;
         int checkingX = labelMonster.getX()/Labels.TILE_SIZE;
 
-        if (labelMonster.getBounds().intersects(Labels.labelCharacter.getBounds())) {
+        if (labelHitBoxMonster.getBounds().intersects(Labels.labelHitBoxCharacter.getBounds())) {
 
-        monsterAttack(labelMonster);}
+        monsterAttack(labelMonster, labelHitBoxMonster);}
 
         if (labelMonster.getY() + labelMonster.getHeight() >= Panels.panelGaming.getHeight() - Labels.TILE_SIZE * 2) {
             wallCollision = true;
@@ -243,6 +251,7 @@ abstract public class Monster {
         }
         if (!wallCollision) {
             labelMonster.setLocation(labelMonster.getX(), y);
+            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.hitBoxDiference, labelMonster.getY()+Labels.hitBoxDiference);
         }
 
         return direction;
@@ -252,8 +261,8 @@ abstract public class Monster {
      * lo que ocurre cuando ataca el monstruo
      * @param labelMonster la JLabel que pertenece al monstruo
      */
-    public void monsterAttack(JLabel labelMonster){
+    public void monsterAttack(JLabel labelMonster, JLabel labelHitBoxMonster){
 
-        Dungeon.character.contactVSMonster(this, labelMonster);
+        Dungeon.character.contactVSMonster(this, labelMonster, labelHitBoxMonster);
     }
 }

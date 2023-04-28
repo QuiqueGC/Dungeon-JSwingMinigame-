@@ -1,5 +1,7 @@
 package classes.monsters;
 
+import classes.Labels;
+
 import javax.swing.*;
 
 /**
@@ -21,10 +23,11 @@ public class WarriorSkeleton extends Monster {
      * @param labelMonster la JLabel que pertenece al monstruo
      */
     @Override
-    public void monsterAttack(JLabel labelMonster) {
-        super.monsterAttack(labelMonster);
+    public void monsterAttack(JLabel labelMonster, JLabel labelHitBoxMonster) {
+        super.monsterAttack(labelMonster, labelHitBoxMonster);
 
         labelMonster.setSize(labelMonster.getWidth()+25,labelMonster.getHeight()+25);
+        labelHitBoxMonster.setSize(labelMonster.getWidth()- Labels.hitBoxDiference,labelMonster.getHeight()-Labels.hitBoxDiference);
         this.damage++;
     }
 }

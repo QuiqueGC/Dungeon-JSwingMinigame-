@@ -133,7 +133,7 @@ public abstract class Character {
       * @param monster objeto Monster con el que colisiona
       * @param labelMonster JLabel del monstruo con el que colisiona
       */
-     public void contactVSMonster(Monster monster, JLabel labelMonster){
+     public void contactVSMonster(Monster monster, JLabel labelMonster, JLabel labelHitBoxMonster){
      }
 
      /**
@@ -156,6 +156,8 @@ public abstract class Character {
                }
           }
           Labels.labelCharacter.setLocation(Labels.TILE_SIZE * 3, Labels.TILE_SIZE * 17);
+          Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX()+Labels.hitBoxDiference, Labels.labelCharacter.getY()+Labels.hitBoxDiference);
+
 
 
           if(this.lives <=0){
@@ -171,7 +173,7 @@ public abstract class Character {
       */
      public void takingGold(){
 
-          if (Labels.labelCharacter.getBounds().intersects(Labels.labelGold.getBounds())){
+          if (Labels.labelHitBoxCharacter.getBounds().intersects(Labels.labelGold.getBounds())){
                this.gold += 10;
                Labels.labelGoldText.setText("Oro obtenido: "+this.gold);
                Maps.checkingDeployimentColissionBorn(Labels.labelGold);
@@ -182,7 +184,7 @@ public abstract class Character {
       * lo que ocurre cuando entra en contacto con la espada
       */
      public void takingSword(){
-          if (Labels.labelCharacter.getBounds().intersects(Labels.labelSword.getBounds())){
+          if (Labels.labelHitBoxCharacter.getBounds().intersects(Labels.labelSword.getBounds())){
 
 
                Sword sword = new Sword();
@@ -204,7 +206,7 @@ public abstract class Character {
       * lo que ocurre cuando entra en contacto con el bastón mágico
       */
      public void takingMagicStaff(){
-          if (Labels.labelCharacter.getBounds().intersects(Labels.labelMagicStaff.getBounds())){
+          if (Labels.labelHitBoxCharacter.getBounds().intersects(Labels.labelMagicStaff.getBounds())){
 
 
                MagicStaff magicStaff = new MagicStaff();
@@ -225,7 +227,7 @@ public abstract class Character {
       * lo que ocurre cuando entra en contacto con el medallón
       */
      public void takingMedallion(){
-          if (Labels.labelCharacter.getBounds().intersects(Labels.labelMedallion.getBounds())){
+          if (Labels.labelHitBoxCharacter.getBounds().intersects(Labels.labelMedallion.getBounds())){
 
 
                Medallion medallion = new Medallion();
@@ -268,6 +270,7 @@ public abstract class Character {
                }}
           if (!wallCollision) {
                Labels.labelCharacter.setLocation(x, Labels.labelCharacter.getY());
+               Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX()+Labels.hitBoxDiference, Labels.labelCharacter.getY()+Labels.hitBoxDiference);
           }
 
      }
@@ -293,6 +296,7 @@ public abstract class Character {
                }}
           if (!wallCollision) {
                Labels.labelCharacter.setLocation(x, Labels.labelCharacter.getY());
+               Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX()+Labels.hitBoxDiference, Labels.labelCharacter.getY()+Labels.hitBoxDiference);
           }
 
      }
@@ -318,6 +322,7 @@ public abstract class Character {
                }}
           if (!wallCollision) {
                Labels.labelCharacter.setLocation(Labels.labelCharacter.getX(), y);
+               Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX()+Labels.hitBoxDiference, Labels.labelCharacter.getY()+Labels.hitBoxDiference);
           }
 
 
@@ -346,6 +351,7 @@ public abstract class Character {
                }}
           if (!wallCollision) {
                Labels.labelCharacter.setLocation(Labels.labelCharacter.getX(), y);
+               Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX()+Labels.hitBoxDiference, Labels.labelCharacter.getY()+Labels.hitBoxDiference);
           }
 
      }

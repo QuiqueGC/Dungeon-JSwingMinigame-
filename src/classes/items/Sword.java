@@ -13,12 +13,16 @@ public class Sword implements Item{
      * @param labelMonster la JLabel del monstruo en el que puede tener efecto el objeto
      */
     @Override
-    public void useItem(JLabel labelMonster) {
+    public void useItem(JLabel labelMonster, JLabel labelHitBoxMonster) {
 
         Labels.labelSwordStats.setVisible(false);
         labelMonster.setVisible(false);
         labelMonster.setBounds(1, 1, 1, 1);
         labelMonster.setLocation(0, 0);
+        labelHitBoxMonster.setVisible(false);
+        labelHitBoxMonster.setBounds(1, 1, 1, 1);
+        labelHitBoxMonster.setLocation(0, 0);
+
 
     }
 }

@@ -16,7 +16,7 @@ public class Medallion implements Item{
      * @param labelMonster la JLabel del monstruo en el que puede tener efecto el objeto
      */
     @Override
-    public void useItem(JLabel labelMonster) {
+    public void useItem(JLabel labelMonster, JLabel labelHitBoxMonster) {
 
         Labels.labelMedallionStats.setVisible(false);
         //Es la posición de inicio

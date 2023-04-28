@@ -16,7 +16,7 @@ public class Dragon extends Monster{
     }
 
     @Override
-    public void monsterAttack(JLabel labelMonster) {
+    public void monsterAttack(JLabel labelMonster, JLabel labelHitBoxMonster) {
 
         Dungeon.character.sufferDamage(this);
     }

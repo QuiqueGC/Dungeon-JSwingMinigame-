@@ -37,11 +37,12 @@ public class TimerActionDragon implements ActionListener {
 
                 if (timer >= randomAparition) {
                 Labels.labelDragon.setLocation(dragonX, dragonY);
+                Labels.labelHitBoxDragon.setLocation(Labels.labelDragon.getX()-Labels.hitBoxDiference,Labels.labelDragon.getY()-Labels.hitBoxDiference);
                 dragonX -= this.monster.getSpeed() * 2;
                 dragonY -= this.monster.getSpeed();
 
-                    if(Labels.labelDragon.getBounds().intersects(Labels.labelCharacter.getBounds())){
-                monster.monsterAttack(Labels.labelDragon);}
+                    if(Labels.labelHitBoxDragon.getBounds().intersects(Labels.labelHitBoxCharacter.getBounds())){
+                monster.monsterAttack(Labels.labelDragon, Labels.labelHitBoxDragon);}
 
         }
                 if (outOfThePanel){
@@ -49,6 +50,7 @@ public class TimerActionDragon implements ActionListener {
                     dragonX= Panels.panelGaming.getWidth();
                     dragonY = Panels.panelGaming.getHeight();
                     Labels.labelDragon.setLocation(dragonX,dragonY);
+                    Labels.labelHitBoxDragon.setLocation(Labels.labelDragon.getX()-Labels.hitBoxDiference,Labels.labelDragon.getY()-Labels.hitBoxDiference);
                 }
     }
 

@@ -77,16 +77,16 @@ public class Dungeon {
 
 
         //timers de monstruos
-        Timer timer2 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(0), skel));
-        Timer timer3 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(1), skel));
-        Timer timer4 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(2), warriorSkel));
-        Timer timer5 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(3), warriorSkel2));
-        Timer timer6 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(4), priestessSkel));
-        Timer timer7 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(5), priestessSkel2));
-        Timer timer8 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(6), skel));
-        Timer timer9 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(7), skel));
-        Timer timer10 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(8), skel));
-        Timer timer11 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(9), skel));
+        Timer timer2 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(0),Labels.labelsHitBoxMonsters.get(0), skel));
+        Timer timer3 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(1),Labels.labelsHitBoxMonsters.get(1), skel));
+        Timer timer4 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(2),Labels.labelsHitBoxMonsters.get(2), warriorSkel));
+        Timer timer5 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(3),Labels.labelsHitBoxMonsters.get(3), warriorSkel2));
+        Timer timer6 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(4),Labels.labelsHitBoxMonsters.get(4), priestessSkel));
+        Timer timer7 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(5),Labels.labelsHitBoxMonsters.get(5), priestessSkel2));
+        Timer timer8 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(6),Labels.labelsHitBoxMonsters.get(6), skel));
+        Timer timer9 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(7),Labels.labelsHitBoxMonsters.get(7), skel));
+        Timer timer10 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(8),Labels.labelsHitBoxMonsters.get(8), skel));
+        Timer timer11 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(9),Labels.labelsHitBoxMonsters.get(9), skel));
         Timer timerDragon = new Timer(50, new TimerActionDragon(dragon));
 
         Timer timerLoosing = new Timer(10, new TimerLoosingAndWinning(frame, panelMain, timer2, timer3, timer4, timer5,
