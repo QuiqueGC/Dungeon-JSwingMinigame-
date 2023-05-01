@@ -100,6 +100,13 @@ public class TimerLoosingAndWinning implements ActionListener {
                 label.setBounds(1, 1, 1, 1);
                 label.setLocation(0, 0);
             }
+            for (JLabel label :
+                    Labels.labelsHitBoxMonsters) {
+                label.setVisible(false);
+                label.setBounds(1, 1, 1, 1);
+                label.setLocation(0, 0);
+            }
+
             Labels.labelSword.setVisible(false);
             Labels.labelSword.setBounds(1, 1, 1, 1);
             Labels.labelSword.setLocation(0, 0);
