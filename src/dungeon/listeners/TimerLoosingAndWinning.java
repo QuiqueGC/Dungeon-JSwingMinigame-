@@ -1,6 +1,7 @@
 package dungeon.listeners;
 
 import classes.Labels;
+import classes.Panels;
 import dungeon.Dungeon;
 
 import javax.swing.*;
@@ -73,6 +74,7 @@ public class TimerLoosingAndWinning implements ActionListener {
             stopTimers();
 
             JOptionPane.showMessageDialog(null,"Tú ganas!","GAME OVER",JOptionPane.WARNING_MESSAGE);
+
             askingRematch();
         }
 
@@ -118,6 +120,12 @@ public class TimerLoosingAndWinning implements ActionListener {
             Labels.labelMedallion.setVisible(false);
             Labels.labelMedallion.setBounds(1, 1, 1, 1);
             Labels.labelMedallion.setLocation(0, 0);
+
+            Labels.labelDragon.setVisible(false);
+            Labels.labelDragon.setBounds(1, 1, 1, 1);
+            Labels.labelDragon.setLocation(0, 0);
+            Labels.labelHitBoxDragon.setBounds(1,1,1,1);
+            Labels.labelHitBoxDragon.setLocation(0, 0);
 
             frame.removeAll();
             panelMain.removeAll();
