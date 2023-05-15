@@ -10,12 +10,11 @@ import classes.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Dungeon {
     private JPanel panelMain;
     public static Character character;
-
-
 
 
     public static void main(String[] args) {
@@ -51,12 +50,14 @@ public class Dungeon {
 
 
     public Dungeon(JFrame frame) {
+        int seconds = 0;
         Skeleton skel = new Skeleton();
         WarriorSkeleton warriorSkel = new WarriorSkeleton();
         WarriorSkeleton warriorSkel2 = new WarriorSkeleton();
         PriestessSkeleton priestessSkel = new PriestessSkeleton();
         PriestessSkeleton priestessSkel2 = new PriestessSkeleton();
         Dragon dragon = new Dragon();
+        Timer[] timers = new Timer[12];
 
 
         Panels.createPanelMain(panelMain);
@@ -75,40 +76,35 @@ public class Dungeon {
         //agregamos el listener de teclado
         panelMain.addKeyListener(new PanelMainListener());
 
+        //timer de contador de tiempo
+        timers[0] = new Timer(1000, new SecondsCounter(seconds));
 
         //timers de monstruos
-        Timer timer2 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(0),Labels.labelsHitBoxMonsters.get(0), skel));
-        Timer timer3 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(1),Labels.labelsHitBoxMonsters.get(1), skel));
-        Timer timer4 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(2),Labels.labelsHitBoxMonsters.get(2), warriorSkel));
-        Timer timer5 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(3),Labels.labelsHitBoxMonsters.get(3), warriorSkel2));
-        Timer timer6 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(4),Labels.labelsHitBoxMonsters.get(4), priestessSkel));
-        Timer timer7 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(5),Labels.labelsHitBoxMonsters.get(5), priestessSkel2));
-        Timer timer8 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(6),Labels.labelsHitBoxMonsters.get(6), skel));
-        Timer timer9 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(7),Labels.labelsHitBoxMonsters.get(7), skel));
-        Timer timer10 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(8),Labels.labelsHitBoxMonsters.get(8), skel));
-        Timer timer11 = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(9),Labels.labelsHitBoxMonsters.get(9), skel));
-        Timer timerDragon = new Timer(50, new TimerActionDragon(dragon));
 
-        Timer timerLoosing = new Timer(10, new TimerLoosingAndWinning(frame, panelMain, timer2, timer3, timer4, timer5,
-                timer6, timer7, timer8, timer9, timer10, timer11, timerDragon));
+        for (int i = 0; i < 6; i++) {
+            //creo la variable j porque los timers van un nivel de índice por encima de los otros arrays
+            int j = i+1;
+            timers[j] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(i),Labels.labelsHitBoxMonsters.get(i), skel));
+        }
+        timers[7] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(6),Labels.labelsHitBoxMonsters.get(6), priestessSkel));
+        timers[8] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(7),Labels.labelsHitBoxMonsters.get(7), priestessSkel2));
+        timers[9] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(8),Labels.labelsHitBoxMonsters.get(8), warriorSkel));
+        timers[10] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(9),Labels.labelsHitBoxMonsters.get(9), warriorSkel2));
+        timers[11] = new Timer(50, new TimerActionDragon(dragon));
 
-        timer2.start();
-        timer3.start();
-        timer4.start();
-        timer5.start();
-        timer6.start();
-        timer7.start();
-        timer8.start();
-        timer9.start();
-        timer10.start();
-        timer11.start();
-        timerDragon.start();
+
+        //timer de victoria o derrota
+        Timer timerLoosing = new Timer(10, new TimerLoosingAndWinning(frame, panelMain, timers));
+
+
+        for (int i = 0; i < 12; i++) {
+            timers[i].start();
+        }
 
         timerLoosing.start();
 
 
-        Labels.buttonPause.addMouseListener(new ButtonPauseListener(timer2, timer3, timer4, timer5,
-                timer6, timer7, timer8, timer9, timer10, timer11, timerDragon, panelMain));
+        Labels.buttonPause.addMouseListener(new ButtonPauseListener(timers, panelMain));
     }
 
 

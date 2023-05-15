@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Necromancer extends Character {
 
     public Necromancer() {
+        this.type = "Nigromante";
         this.lives = 3;
         this.speed = 7;
         this.upLooking = "src/img/wizard/wizard_up.gif";
@@ -58,12 +59,5 @@ public class Necromancer extends Character {
         }
     }
 
-
-    @Override
-    public String toString() {
-        return "Mago-->   " +
-                "Vidas: " + this.lives +
-                "   Velocidad: " + this.speed;
-    }
 
 }

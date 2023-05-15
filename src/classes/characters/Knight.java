@@ -14,6 +14,7 @@ public class Knight extends Character {
 
 
     public Knight() {
+        this.type = "Caballero";
         this.lives = 5;
         this.speed = 3;
         this.upLooking = "src/img/warrior/warrior_up.gif";
@@ -60,12 +61,5 @@ public class Knight extends Character {
         }
     }
 
-
-    @Override
-    public String toString() {
-        return "Guerrero-->   " +
-                "Vidas: " + this.lives +
-                "   Velocidad: " + this.speed;
-    }
 
 }

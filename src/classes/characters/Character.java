@@ -25,10 +25,10 @@ public abstract class Character {
      protected int lives;
      protected int gold;
      protected int speed;
+     protected String type;
      protected ArrayList<Item> inventory;
-
+     protected int time;
      protected boolean dead;
-
      protected boolean win;
      public Character() {
      }
@@ -55,6 +55,23 @@ public abstract class Character {
 
      public void setLives(int lives) {
           this.lives = lives;
+     }
+
+     public String getType() {
+          return type;
+     }
+
+     public void setType(String type) {
+          this.type = type;
+     }
+
+
+     public int getTime() {
+          return time;
+     }
+
+     public void setTime(int time) {
+          this.time = time;
      }
 
      public int getGold() {
@@ -123,9 +140,12 @@ public abstract class Character {
 
      @Override
      public String toString() {
-          return "Características:" +
-                  "Vidas: " + this.lives +
-                  "Velocidad: " + this.speed;
+          return this.name.toUpperCase()+ " || "+
+                  "Clase: "+this.type+ " | "+
+                  "Oro: "+ this.gold+ " | "+
+                  "Vidas: " + this.lives + " | "+
+                  "Tiempo: " + this.time+ " | "+
+                  "Misión cumplida: "+this.win;
      }
 
      /**
@@ -161,7 +181,7 @@ public abstract class Character {
 
 
           if(this.lives <=0){
-
+               this.lives = 0;
                this.dead = true;
           }
 
@@ -355,6 +375,5 @@ public abstract class Character {
           }
 
      }
-
 
 }

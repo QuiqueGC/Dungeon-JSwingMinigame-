@@ -7,6 +7,12 @@ import dungeon.Dungeon;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Date;
 
 
 /**
@@ -18,35 +24,20 @@ public class TimerLoosingAndWinning implements ActionListener {
 
     JPanel panelMain;
 
+    Timer[] timers = new Timer [12];
 
-    Timer timer2;
-    Timer timer3;
-    Timer timer4;
-    Timer timer5;
-    Timer timer6;
-    Timer timer7;
-    Timer timer8;
-    Timer timer9;
-    Timer timer10;
-    Timer timer11;
 
-    Timer timerDragon;
+    public TimerLoosingAndWinning(JFrame frame, JPanel panelMain,Timer[] timers) {
 
-    public TimerLoosingAndWinning(JFrame frame, JPanel panelMain, Timer timer2, Timer timer3, Timer timer4, Timer timer5,
-                                  Timer timer6, Timer timer7, Timer timer8, Timer timer9,Timer timer10,Timer timer11, Timer timerDragon) {
         this.frame = frame;
+
         this.panelMain = panelMain;
-        this.timer2 = timer2;
-        this.timer3 = timer3;
-        this.timer4 = timer4;
-        this.timer5 = timer5;
-        this.timer6 = timer6;
-        this.timer7 = timer7;
-        this.timer8 = timer8;
-        this.timer9 = timer9;
-        this.timer10 = timer10;
-        this.timer11 = timer11;
-        this.timerDragon = timerDragon;
+
+        for (int i = 0; i < 12; i++) {
+
+            this.timers[i] = timers[i];
+        }
+
     }
 
     /**
@@ -58,9 +49,13 @@ public class TimerLoosingAndWinning implements ActionListener {
         if (Dungeon.character != null){
 
         if (Dungeon.character.isDead()){
+
+            addingScore();
+
             Dungeon.character.setDead(false);
 
             stopTimers();
+
 
             JOptionPane.showMessageDialog(null, "Has sido humillado", "GAME OVER", JOptionPane.WARNING_MESSAGE);
 
@@ -69,6 +64,9 @@ public class TimerLoosingAndWinning implements ActionListener {
             }
 
         if(Dungeon.character.isWin()){
+
+            addingScore();
+
             Dungeon.character.setWin(false);
 
             stopTimers();
@@ -79,6 +77,24 @@ public class TimerLoosingAndWinning implements ActionListener {
         }
 
     }}
+
+    private void addingScore() {
+        Date date = new Date();
+        String today = date.toString();
+        today = today.concat("---> ");
+
+        String playerScore =today.concat(Dungeon.character.toString());
+
+        Path path = Paths.get("src/resources/scores.txt");
+
+        try {
+            Files.writeString(path, System.lineSeparator()+playerScore, StandardOpenOption.APPEND);
+
+        } catch (IOException e) {
+
+            System.out.println("ERROR EN LA ESCRITURA DEL FICHERO");
+        }
+    }
 
 
     /**
@@ -102,6 +118,7 @@ public class TimerLoosingAndWinning implements ActionListener {
                 label.setBounds(1, 1, 1, 1);
                 label.setLocation(0, 0);
             }
+
             for (JLabel label :
                     Labels.labelsHitBoxMonsters) {
                 label.setVisible(false);
@@ -145,16 +162,9 @@ public class TimerLoosingAndWinning implements ActionListener {
      * detiene todos los timers
      */
     private void stopTimers(){
-        timer2.stop();
-        timer3.stop();
-        timer4.stop();
-        timer5.stop();
-        timer6.stop();
-        timer7.stop();
-        timer8.stop();
-        timer9.stop();
-        timer10.stop();
-        timer11.stop();
-        timerDragon.stop();
+
+        for (int i = 0; i < 12; i++) {
+            timers[i].stop();
+        }
     }
 }

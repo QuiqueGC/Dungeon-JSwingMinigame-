@@ -4,45 +4,32 @@ import classes.Labels;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * listener que extiende MouseAdapter para el botón de pausa
  */
 public class ButtonPauseListener extends MouseAdapter {
 
-    Timer timer2;
-    Timer timer3;
-    Timer timer4;
-    Timer timer5;
-    Timer timer6;
-    Timer timer7;
-    Timer timer8;
-    Timer timer9;
-    Timer timer10;
-    Timer timer11;
+    Timer[] timers = new Timer [12];
 
-    Timer timerDragon;
-    //pongo panel pero, en principio, es el panelMain (al no ser public tengo que pasarlo por parámetros)
+
     JPanel panel;
 
     //pasamos los timer por parámetros para poder usar los del Main
-    public ButtonPauseListener(Timer timer2, Timer timer3, Timer timer4, Timer timer5,
-                               Timer timer6, Timer timer7, Timer timer8, Timer timer9,Timer timer10,Timer timer11, Timer timerDragon, JPanel panel) {
+    public ButtonPauseListener(Timer[] timers, JPanel panel) {
 
-        this.timer2 = timer2;
-        this.timer3 = timer3;
-        this.timer4 = timer4;
-        this.timer5 = timer5;
-        this.timer6 = timer6;
-        this.timer7 = timer7;
-        this.timer8 = timer8;
-        this.timer9 = timer9;
-        this.timer10 = timer10;
-        this.timer11 = timer11;
-        this.timerDragon = timerDragon;
+
+        for (int i = 0; i < 12; i++) {
+
+            this.timers[i] = timers[i];
+        }
 
         this.panel = panel;
-
 
     }
 
@@ -55,35 +42,76 @@ public class ButtonPauseListener extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
         //  super.mouseClicked(e);
         if (Labels.buttonPause.getText().equals("Pausa")) {
-            timer2.stop();
-            timer3.stop();
-            timer4.stop();
-            timer5.stop();
-            timer6.stop();
-            timer7.stop();
-            timer8.stop();
-            timer9.stop();
-            timer10.stop();
-            timer11.stop();
-            timerDragon.stop();
+
+            for (int i = 0; i < 12; i++) {
+
+                timers[i].stop();
+            }
+
+            showRanking();
+
             Labels.buttonPause.setText("Reanudar");
+
         } else {
-            timer2.start();
-            timer3.start();
-            timer4.start();
-            timer5.start();
-            timer6.start();
-            timer7.start();
-            timer8.start();
-            timer9.start();
-            timer10.start();
-            timer11.start();
-            timerDragon.start();
+
+            for (int i = 0; i < 12; i++) {
+
+                timers[i].start();
+            }
+
             Labels.buttonPause.setText("Pausa");
+
             //con el requestFocus recuperas el foco en el objeto al que se lo aplicas
             panel.requestFocus();
 
         }
+
+    }
+
+    private void showRanking() {
+
+        ArrayList<String> ranking = new ArrayList<>();
+        String arrayInOne =null;
+
+
+        keepingInformationInArray(ranking);
+
+
+        for (String s :
+                ranking) {
+            if(arrayInOne == null){
+                arrayInOne = s + "\n";
+            }else{
+            arrayInOne = arrayInOne.concat(s)+"\n";}
+        }
+
+
+        JOptionPane.showMessageDialog(null, arrayInOne, "RANKING", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+
+
+    private void keepingInformationInArray(ArrayList<String> ranking) {
+
+        String fileName = "src/resources/scores.txt";
+        String line;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
+
+            while ((line = br.readLine()) != null){
+
+                ranking.add(line);
+            }
+
+        } catch (FileNotFoundException e) {
+
+            System.out.println("NO SE HA ENCONTRADO EL FICHERO");
+
+        } catch (IOException e) {
+
+            System.out.println("ERROR DURANTE LA LECTURA DEL FICHERO");
+        }
+
 
     }
 }

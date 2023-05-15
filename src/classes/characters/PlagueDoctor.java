@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class PlagueDoctor extends Character {
 
     public PlagueDoctor() {
+        this.type = "Médico de la plaga";
         this.lives = 4;
         this.speed = 5;
         this.upLooking = "src/img/priest/priest_up.gif";
@@ -57,14 +58,6 @@ public class PlagueDoctor extends Character {
             aux.remove(indexToDelete);
             this.inventory = aux;
         }
-    }
-
-
-    @Override
-    public String toString() {
-        return "Clérigo-->   " +
-                "Vidas: " + this.lives +
-                "   Velocidad: " + this.speed;
     }
 
 }

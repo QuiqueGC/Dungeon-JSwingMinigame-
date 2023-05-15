@@ -292,7 +292,7 @@ public class Labels {
         labelCharacter = new JLabel();
         //pongo null en la url para modificarla dependiendo de la elección del jugador
         Maps.labelIconCreation(labelCharacter, null, 48, 48, Panels.panelGaming);
-        labelCharacter.setLocation(TILE_SIZE*3, TILE_SIZE*17);
+        labelCharacter.setLocation(TILE_SIZE*3, TILE_SIZE*18);
 
         //hitBox del personaje
         labelHitBoxCharacter = new JLabel();

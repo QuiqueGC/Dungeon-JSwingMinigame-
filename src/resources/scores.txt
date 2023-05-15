@@ -1,0 +1,16 @@
+Fri May 12 12:33:30 CEST 2023--->3 || Clase: Nigromante | Oro: 0 | Vidas: 0 | Tiempo: 0 | Misión cumplida: false
+Fri May 12 12:34:02 CEST 2023--->3 || Clase: Caballero | Oro: 0 | Vidas: -1 | Tiempo: 0 | Misión cumplida: false
+Fri May 12 12:48:36 CEST 2023---> 3 || Clase: Nigromante | Oro: 0 | Vidas: -1 | Tiempo: 23 | Misión cumplida: false
+Fri May 12 13:13:26 CEST 2023---> 3 || Clase: Nigromante | Oro: 10 | Vidas: -1 | Tiempo: 43 | Misión cumplida: false
+Fri May 12 13:14:15 CEST 2023---> 3 || Clase: Médico de la plaga | Oro: 20 | Vidas: 0 | Tiempo: 43 | Misión cumplida: false
+Fri May 12 13:14:49 CEST 2023---> 3 || Clase: Nigromante | Oro: 10 | Vidas: -1 | Tiempo: 27 | Misión cumplida: false
+Fri May 12 13:16:29 CEST 2023---> 3 || Clase: Médico de la plaga | Oro: 60 | Vidas: 1 | Tiempo: 127 | Misión cumplida: false
+Sun May 14 23:22:59 CEST 2023---> KLJLKJ || Clase: Médico de la plaga | Oro: 70 | Vidas: 2 | Tiempo: 101 | Misión cumplida: true
+Sun May 14 23:23:20 CEST 2023---> LKJ || Clase: Nigromante | Oro: 0 | Vidas: 0 | Tiempo: 16 | Misión cumplida: false
+Mon May 15 14:41:33 CEST 2023---> 3 || Clase: Médico de la plaga | Oro: 0 | Vidas: 0 | Tiempo: 133 | Misión cumplida: false
+Mon May 15 14:42:45 CEST 2023---> XCXC || Clase: Médico de la plaga | Oro: 0 | Vidas: -2 | Tiempo: 66 | Misión cumplida: false
+Mon May 15 14:44:21 CEST 2023---> 3 || Clase: Médico de la plaga | Oro: 20 | Vidas: -2 | Tiempo: 158 | Misión cumplida: false
+Mon May 15 19:34:13 CEST 2023---> DFGD || Clase: Médico de la plaga | Oro: 0 | Vidas: 0 | Tiempo: 38 | Misión cumplida: false
+Mon May 15 19:35:55 CEST 2023---> 3 || Clase: Médico de la plaga | Oro: 0 | Vidas: 0 | Tiempo: 19 | Misión cumplida: false
+Mon May 15 19:36:28 CEST 2023---> 3 || Clase: Caballero | Oro: 0 | Vidas: 0 | Tiempo: 26 | Misión cumplida: false
+Mon May 15 19:40:38 CEST 2023---> 3 || Clase: Médico de la plaga | Oro: 0 | Vidas: 0 | Tiempo: 10 | Misión cumplida: false
