@@ -79,16 +79,11 @@ public class TimerLoosingAndWinning implements ActionListener {
     }}
 
     private void addingScore() {
-        Date date = new Date();
-        String today = date.toString();
-        today = today.concat("---> ");
-
-        String playerScore =today.concat(Dungeon.character.toString());
 
         Path path = Paths.get("src/resources/scores.txt");
 
         try {
-            Files.writeString(path, System.lineSeparator()+playerScore, StandardOpenOption.APPEND);
+            Files.writeString(path, Dungeon.character.toFile()+System.lineSeparator(), StandardOpenOption.APPEND);
 
         } catch (IOException e) {
 

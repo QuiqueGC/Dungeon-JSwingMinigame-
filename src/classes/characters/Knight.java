@@ -26,6 +26,15 @@ public class Knight extends Character {
         this.win = false;
     }
 
+    public Knight(String name, String type, int gold, int lives, int time, boolean win){
+
+        this.name = name;
+        this.type = type;
+        this.gold = gold;
+        this.lives = lives;
+        this.time = time;
+        this.win = win;
+    }
 
     /**
      * determina lo que ocurre cuando el caballero entra en contacto con un monstruo

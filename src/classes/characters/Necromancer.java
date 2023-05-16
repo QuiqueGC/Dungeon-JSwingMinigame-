@@ -24,6 +24,15 @@ public class Necromancer extends Character {
         this.dead = false;
         this.win = false;
     }
+    public Necromancer(String name, String type, int gold, int lives, int time, boolean win){
+
+        this.name = name;
+        this.type = type;
+        this.gold = gold;
+        this.lives = lives;
+        this.time = time;
+        this.win = win;
+    }
 
     /**
      * lo que ocurre cuando el nigromante entra en contacto con un monstruo

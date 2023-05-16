@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class PlagueDoctor extends Character {
 
     public PlagueDoctor() {
-        this.type = "Médico de la plaga";
+        this.type = "Médico de la peste";
         this.lives = 4;
         this.speed = 5;
         this.upLooking = "src/img/priest/priest_up.gif";
@@ -26,6 +26,15 @@ public class PlagueDoctor extends Character {
     }
 
 
+    public PlagueDoctor(String name, String type, int gold, int lives, int time, boolean win){
+
+        this.name = name;
+        this.type = type;
+        this.gold = gold;
+        this.lives = lives;
+        this.time = time;
+        this.win = win;
+    }
     /**
      * lo que ocurre cuando el médico de la plaga entra en contacto con un montruo
      * @param monster objeto Monster con el que colisiona
