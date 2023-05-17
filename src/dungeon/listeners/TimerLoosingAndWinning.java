@@ -1,6 +1,7 @@
 package dungeon.listeners;
 
 import classes.ConnectionDB;
+import classes.FilesRW;
 import classes.Labels;
 import dungeon.Dungeon;
 
@@ -53,7 +54,7 @@ public class TimerLoosingAndWinning implements ActionListener {
 
         if (Dungeon.character.isDead()){
 
-            addingScore();
+            FilesRW.addingScore();
 
             con.insertIntoRankingTable(Dungeon.character);
 
@@ -70,7 +71,7 @@ public class TimerLoosingAndWinning implements ActionListener {
 
         if(Dungeon.character.isWin()){
 
-            addingScore();
+            FilesRW.addingScore();
 
             con.insertIntoRankingTable(Dungeon.character);
 
@@ -85,19 +86,6 @@ public class TimerLoosingAndWinning implements ActionListener {
 
     }}
 
-
-    private void addingScore() {
-
-        Path path = Paths.get("src/resources/scores.txt");
-
-        try {
-            Files.writeString(path, Dungeon.character.toFile()+System.lineSeparator(), StandardOpenOption.APPEND);
-
-        } catch (IOException e) {
-
-            System.out.println("ERROR EN LA ESCRITURA DEL FICHERO");
-        }
-    }
 
 
     /**
