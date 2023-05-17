@@ -114,7 +114,9 @@ public class ButtonPauseListener extends MouseAdapter {
 
 
         if (character != null){
-                removingFromRanking(ranking, character);}
+
+                removingFromRanking(ranking, character);
+        }
 
         //si inicializo el iterator antes del removingFromRanking me peta el programa
         Iterator<Character> it = ranking.iterator();
@@ -122,9 +124,9 @@ public class ButtonPauseListener extends MouseAdapter {
         while(it.hasNext() && counter <= 5){
 
             if(arrayInOne == null){
-                arrayInOne ="#"+counter+ it.next() + "\n";
+                arrayInOne ="#"+counter+" "+ it.next() + "\n";
             }else{
-                arrayInOne = arrayInOne.concat("#"+counter+it.next().toString())+"\n";}
+                arrayInOne = arrayInOne.concat("#"+counter+" "+it.next().toString())+"\n";}
 
             counter++;
         }

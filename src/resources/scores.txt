@@ -1,7 +1,13 @@
-alalala;Nigromante;0;0;16;true
-doctor0;Médico de la plaga;50;0;54;true
-makumeko;Caballero;50;2;120;true
-makuko;Caballero;50;2;135;true
-umeko;Caballero;50;2;115;true
-maku;Caballero;50;1;135;true
-ko;Caballero;50;2;135;true
+dr. muerte;Médico de la peste;120;2;182;true
+arturus;Caballero;0;0;37;false
+raistlin;Nigromante;70;3;48;true
+3;Nigromante;10;0;12;false
+3;Nigromante;0;0;6;false
+3;Nigromante;0;0;15;false
+3;Nigromante;0;0;3;false
+3;Nigromante;0;0;11;false
+3;Nigromante;0;0;12;false
+3;Nigromante;0;0;12;false
+3;Caballero;0;0;33;false
+3;Nigromante;0;0;13;false
+3;Nigromante;10;0;12;false

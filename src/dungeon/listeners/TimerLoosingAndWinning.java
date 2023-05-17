@@ -1,7 +1,7 @@
 package dungeon.listeners;
 
+import classes.ConnectionDB;
 import classes.Labels;
-import classes.Panels;
 import dungeon.Dungeon;
 
 import javax.swing.*;
@@ -12,7 +12,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.Date;
 
 
 /**
@@ -46,11 +45,17 @@ public class TimerLoosingAndWinning implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        ConnectionDB con = new ConnectionDB("jdbc:mysql://localhost:3306/dungeon","dungeonMaster","1234");
+
+
         if (Dungeon.character != null){
 
         if (Dungeon.character.isDead()){
 
             addingScore();
+
+            con.insertIntoRankingTable(Dungeon.character);
 
             Dungeon.character.setDead(false);
 
@@ -67,6 +72,8 @@ public class TimerLoosingAndWinning implements ActionListener {
 
             addingScore();
 
+            con.insertIntoRankingTable(Dungeon.character);
+
             Dungeon.character.setWin(false);
 
             stopTimers();
@@ -77,6 +84,7 @@ public class TimerLoosingAndWinning implements ActionListener {
         }
 
     }}
+
 
     private void addingScore() {
 
