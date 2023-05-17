@@ -27,7 +27,6 @@ public class PanelMainListener extends KeyAdapter {
 
 
 
-
         switch (e.getKeyCode()) {
 
             case KeyEvent.VK_RIGHT -> {
@@ -99,7 +98,6 @@ public class PanelMainListener extends KeyAdapter {
 
     /**
      * chequea que la JLabel esté mirando hacia la izquierda y, en caso de que no sea así, lo cambia
-     * @param labelCharacter la JLabel que queremos chequear
      * @param lookingToGoodPlace int que indica la dirección hacia la que mira
      * @return lookingToGoodPlace con la dirección hacia la que está mirando una vez corregida
      */
@@ -113,7 +111,6 @@ public class PanelMainListener extends KeyAdapter {
 
     /**
      * chequea que la JLabel esté mirando hacia arriba y, en caso de que no sea así, lo cambia
-     * @param labelCharacter la JLabel que queremos chequear
      * @param lookingToGoodPlace int que indica la dirección hacia la que mira
      * @return lookingToGoodPlace con la dirección hacia la que está mirando una vez corregida
      */
@@ -127,7 +124,6 @@ public class PanelMainListener extends KeyAdapter {
 
     /**
      * chequea que la JLabel esté mirando hacia abajo y, en caso de que no sea así, lo cambia
-     * @param labelCharacter la JLabel que queremos chequear
      * @param lookingToGoodPlace int que indica la dirección hacia la que mira
      * @return lookingToGoodPlace con la dirección hacia la que está mirando una vez corregida
      */

@@ -7,10 +7,9 @@ import classes.monsters.Skeleton;
 import classes.monsters.WarriorSkeleton;
 import dungeon.listeners.*;
 import classes.*;
-
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+
 
 public class Dungeon {
     private JPanel panelMain;
@@ -50,6 +49,8 @@ public class Dungeon {
 
 
     public Dungeon(JFrame frame) {
+
+        ConnectionDB connectionDB = new ConnectionDB("jdbc:mysql://localhost:3306/dungeon","dungeonMaster","1234");
         int seconds = 0;
         Skeleton skel = new Skeleton();
         WarriorSkeleton warriorSkel = new WarriorSkeleton();
@@ -94,7 +95,7 @@ public class Dungeon {
 
 
         //timer de victoria o derrota
-        Timer timerLoosing = new Timer(10, new TimerLoosingAndWinning(frame, panelMain, timers));
+        Timer timerLoosing = new Timer(10, new TimerLoosingAndWinning(frame, panelMain, timers, connectionDB));
 
 
         for (int i = 0; i < 12; i++) {

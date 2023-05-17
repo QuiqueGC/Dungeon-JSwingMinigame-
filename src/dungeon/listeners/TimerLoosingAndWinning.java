@@ -8,11 +8,6 @@ import dungeon.Dungeon;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 
 
 /**
@@ -26,12 +21,16 @@ public class TimerLoosingAndWinning implements ActionListener {
 
     Timer[] timers = new Timer [12];
 
+    ConnectionDB connectionDB;
 
-    public TimerLoosingAndWinning(JFrame frame, JPanel panelMain,Timer[] timers) {
+
+    public TimerLoosingAndWinning(JFrame frame, JPanel panelMain,Timer[] timers, ConnectionDB connectionDB) {
 
         this.frame = frame;
 
         this.panelMain = panelMain;
+
+        this.connectionDB = connectionDB;
 
         for (int i = 0; i < 12; i++) {
 
@@ -47,8 +46,6 @@ public class TimerLoosingAndWinning implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        ConnectionDB con = new ConnectionDB("jdbc:mysql://localhost:3306/dungeon","dungeonMaster","1234");
-
 
         if (Dungeon.character != null){
 
@@ -56,7 +53,9 @@ public class TimerLoosingAndWinning implements ActionListener {
 
             FilesRW.addingScore();
 
-            con.insertIntoRankingTable(Dungeon.character);
+            connectionDB.insertIntoRankingTable(Dungeon.character);
+
+            connectionDB.closeConnection();
 
             Dungeon.character.setDead(false);
 
@@ -73,7 +72,9 @@ public class TimerLoosingAndWinning implements ActionListener {
 
             FilesRW.addingScore();
 
-            con.insertIntoRankingTable(Dungeon.character);
+            connectionDB.insertIntoRankingTable(Dungeon.character);
+
+            connectionDB.closeConnection();
 
             Dungeon.character.setWin(false);
 

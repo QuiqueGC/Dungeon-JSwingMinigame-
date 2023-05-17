@@ -9,50 +9,59 @@ import java.time.LocalDateTime;
 public class ConnectionDB {
 
 
-    private String db_url;
-    private String user;
-    private String passwd;
-
     private Connection connection;
+
 
 
     public ConnectionDB(String db_url, String user, String passwd) {
 
-        this.db_url= db_url;
-        this.user = user;
-        this.passwd = passwd;
+        try {
+
+            this.connection = DriverManager.getConnection(db_url, user, passwd);
+
+        } catch (SQLException e) {
+
+            System.out.println("Error al acceder a la base de datos.");
+        }
 
     }
+
+    /**
+     * método para introducir los datos del personaje en la base de datos
+     * @param character Character con el que se ha jugado la partida
+     */
     public void insertIntoRankingTable(classes.characters.Character character){
 
         LocalDateTime date = LocalDateTime.now();
         String today = date.toString();
         String insertQy = "insert into ranking (nombre, clase, oro, vidas, tiempo, victoria, fecha) values (?,?,?,?,?,?,?)";
 
-        try {
 
-            this.connection = DriverManager.getConnection(db_url, user, passwd);
-            PreparedStatement ps = this.connection.prepareStatement(insertQy);
+            try {
+                PreparedStatement ps = this.connection.prepareStatement(insertQy);
 
-            ps.setString(1, character.getName());
-            ps.setString(2,character.getType());
-            ps.setInt(3,character.getGold());
-            ps.setInt(4,character.getLives());
-            ps.setInt(5,character.getTime());
-            ps.setBoolean(6,character.isWin());
-            ps.setString(7, today);
+                ps.setString(1, character.getName());
+                ps.setString(2, character.getType());
+                ps.setInt(3, character.getGold());
+                ps.setInt(4, character.getLives());
+                ps.setInt(5, character.getTime());
+                ps.setBoolean(6, character.isWin());
+                ps.setString(7, today);
 
-            int addRows = ps.executeUpdate();
-            if (addRows > 0){
-                System.out.println("Se ha añadido el registro en la base de datos");}
+                int addRows = ps.executeUpdate();
 
-            ps.close();
-            this.connection.close();
+                if (addRows > 0) {
+                    System.out.println("Se ha añadido el registro en la base de datos");
+                }
+                ps.close();
 
-        } catch (SQLException e) {
+            }catch (SQLException e){
 
-            System.out.println("Error al acceder a la base de datos.");
-        }
+                System.out.println("Error introduciendo los datos en la BD");
+
+            }
+
+
     }
 
     public Connection getConnection() {
@@ -63,28 +72,19 @@ public class ConnectionDB {
         this.connection = connection;
     }
 
-    public String getDb_url() {
-        return db_url;
-    }
+    /**
+     * método para cerrar la conexión con la base de datos
+     */
+    public void closeConnection(){
 
-    public void setDb_url(String db_url) {
-        this.db_url = db_url;
-    }
+        try {
 
-    public String getUser() {
-        return user;
-    }
+            this.connection.close();
 
-    public void setUser(String user) {
-        this.user = user;
-    }
+        } catch (SQLException e) {
 
-    public String getPasswd() {
-        return passwd;
-    }
-
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
+            System.out.println("Error cerrando la conexión con la BD");
+        }
     }
 
 
