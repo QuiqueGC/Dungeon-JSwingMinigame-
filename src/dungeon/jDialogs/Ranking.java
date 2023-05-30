@@ -7,6 +7,7 @@ import classes.characters.Character;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Clase que extiende JDialog para mostrar el ranking en una ventana
@@ -70,6 +71,7 @@ public class Ranking extends JDialog {
 
         FilesRW.keepFileInArray(rankingList);
 
+        Collections.sort(rankingList);
 
         for (int i = 0; i < 10; i++) {
 
