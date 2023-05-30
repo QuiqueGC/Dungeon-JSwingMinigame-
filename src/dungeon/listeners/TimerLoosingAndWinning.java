@@ -32,7 +32,7 @@ public class TimerLoosingAndWinning implements ActionListener {
 
         this.connectionDB = connectionDB;
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 10; i++) {
 
             this.timers[i] = timers[i];
         }
@@ -62,7 +62,7 @@ public class TimerLoosingAndWinning implements ActionListener {
             stopTimers();
 
 
-            JOptionPane.showMessageDialog(null, "Has sido humillado", "GAME OVER", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Has sido humillad@", "GAME OVER", JOptionPane.WARNING_MESSAGE);
 
 
             askingRematch();
@@ -155,7 +155,7 @@ public class TimerLoosingAndWinning implements ActionListener {
      */
     private void stopTimers(){
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 10; i++) {
             timers[i].stop();
         }
     }

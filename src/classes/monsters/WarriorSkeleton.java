@@ -27,7 +27,7 @@ public class WarriorSkeleton extends Monster {
         super.monsterAttack(labelMonster, labelHitBoxMonster);
 
         labelMonster.setSize(labelMonster.getWidth()+25,labelMonster.getHeight()+25);
-        labelHitBoxMonster.setSize(labelMonster.getWidth()- Labels.hitBoxDiference,labelMonster.getHeight()-Labels.hitBoxDiference);
+        labelHitBoxMonster.setSize(labelMonster.getWidth()- Labels.HIT_BOX_DIFFERENCE,labelMonster.getHeight()-Labels.HIT_BOX_DIFFERENCE);
         this.damage++;
     }
 }

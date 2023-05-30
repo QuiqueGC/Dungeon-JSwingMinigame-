@@ -29,21 +29,21 @@ public class PanelMainListener extends KeyAdapter {
 
         switch (e.getKeyCode()) {
 
-            case KeyEvent.VK_RIGHT -> {
+            case KeyEvent.VK_D, KeyEvent.VK_RIGHT -> {
 
                 whereHeLookingFor = labelLookingRightDirection(whereHeLookingFor);
 
                 Dungeon.character.characterMovingRight();
 
             }
-            case KeyEvent.VK_LEFT -> {
+            case KeyEvent.VK_A, KeyEvent.VK_LEFT -> {
 
                 whereHeLookingFor = labelLookingLeftDirection(whereHeLookingFor);
 
                 Dungeon.character.characterMovingLeft();
             }
 
-            case KeyEvent.VK_UP -> {
+            case KeyEvent.VK_W, KeyEvent.VK_UP -> {
 
 
                 whereHeLookingFor = labelLookingUpDirection(whereHeLookingFor);
@@ -53,7 +53,7 @@ public class PanelMainListener extends KeyAdapter {
             }
 
 
-            case KeyEvent.VK_DOWN -> {
+            case KeyEvent.VK_S, KeyEvent.VK_DOWN -> {
 
 
                 whereHeLookingFor = labelLookingDownDirection(whereHeLookingFor);

@@ -13,3 +13,56 @@ raistlin;Nigromante;70;3;48;true
 3;Nigromante;10;0;12;false
 3;Médico de la peste;0;0;9;false
 3;Nigromante;0;0;10;false
+hgfgh;Médico de la peste;10;0;45;false
+ADRI;Caballero;20;0;215;false
+3;Nigromante;10;0;33;false
+3;Médico de la peste;60;1;301;true
+"·"$"·$à;Caballero;10;0;117;false
+4;Nigromante;80;3;179;true
+FASEDFESF;Nigromante;10;0;90;false
+3;Caballero;0;0;39;false
+3;Médico de la peste;20;0;91;false
+HOLA;Nigromante;80;1;109;true
+3;Caballero;60;0;196;false
+MAX;Nigromante;0;0;41;false
+MAX;Nigromante;20;0;93;false
+KOKO;Médico de la peste;90;0;126;false
+AngelL;Médico de la peste;110;1;267;true
+hola;Caballero;40;0;161;false
+adios;Médico de la peste;60;0;97;false
+w;Nigromante;60;0;112;false
+Rubaklk;Nigromante;0;0;97;false
+MA;Nigromante;130;0;127;false
+marc;Nigromante;50;0;160;false
+oriol;Caballero;0;0;61;false
+oriol;Médico de la peste;60;0;92;false
+Ivory;Nigromante;10;0;91;false
+Chenxiao;Nigromante;50;0;80;false
+Nacho;Nigromante;40;0;154;false
+Ricard;Nigromante;10;0;115;false
+ricardi;Nigromante;20;0;65;false
+ricardi;Nigromante;120;0;190;false
+BigBili;Médico de la peste;10;0;138;false
+Kappa;Nigromante;10;0;39;false
+AVELLANEDAAA;Nigromante;10;0;40;false
+BILI;Nigromante;30;0;65;false
+Bili;Nigromante;20;0;33;false
+Iker;Nigromante;10;0;77;false
+Iker;Caballero;100;0;285;false
+m06;Caballero;50;0;189;false
+jj;Nigromante;40;0;79;false
+pol;Médico de la peste;0;0;64;false
+Nigroadria;Nigromante;30;0;128;false
+Daa;Nigromante;0;0;31;false
+Daa;Nigromante;10;0;52;false
+lkjlkj;Nigromante;10;0;66;false
+3;Nigromante;0;0;36;false
+3;Nigromante;0;0;94;false
+ivonne;Médico de la peste;20;0;125;false
+3;Médico de la peste;10;0;46;false
+3;Caballero;40;0;172;false
+3;Nigromante;0;0;12;false
+jasly;Caballero;30;0;170;false
+3;Nigromante;0;0;32;false
+3;Nigromante;0;0;28;false
+3;Médico de la peste;0;0;10;false

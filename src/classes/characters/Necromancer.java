@@ -32,6 +32,7 @@ public class Necromancer extends Character {
         this.lives = lives;
         this.time = time;
         this.win = win;
+        this.downLooking = "src/img/wizard/wizard_down.gif";
     }
 
     /**

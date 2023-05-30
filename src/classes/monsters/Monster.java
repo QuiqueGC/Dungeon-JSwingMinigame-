@@ -115,7 +115,7 @@ abstract public class Monster {
         }
         if (!wallCollision) {
             labelMonster.setLocation(x, labelMonster.getY());
-            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.hitBoxDiference, labelMonster.getY()+Labels.hitBoxDiference);
+            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.HIT_BOX_DIFFERENCE, labelMonster.getY()+Labels.HIT_BOX_DIFFERENCE);
 
         }
         return direction;
@@ -162,7 +162,7 @@ abstract public class Monster {
         }
         if (!wallCollision) {
             labelMonster.setLocation(x, labelMonster.getY());
-            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.hitBoxDiference, labelMonster.getY()+Labels.hitBoxDiference);
+            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.HIT_BOX_DIFFERENCE/2, labelMonster.getY()+Labels.HIT_BOX_DIFFERENCE/2);
         }
         return direction;
     }
@@ -205,7 +205,7 @@ abstract public class Monster {
         }
         if (!wallCollision) {
             labelMonster.setLocation(labelMonster.getX(), y);
-            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.hitBoxDiference, labelMonster.getY()+Labels.hitBoxDiference);
+            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.HIT_BOX_DIFFERENCE/2, labelMonster.getY()+Labels.HIT_BOX_DIFFERENCE/2);
         }
 
         return direction;
@@ -251,7 +251,7 @@ abstract public class Monster {
         }
         if (!wallCollision) {
             labelMonster.setLocation(labelMonster.getX(), y);
-            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.hitBoxDiference, labelMonster.getY()+Labels.hitBoxDiference);
+            labelHitBoxMonster.setLocation(labelMonster.getX()+Labels.HIT_BOX_DIFFERENCE/2, labelMonster.getY()+Labels.HIT_BOX_DIFFERENCE/2);
         }
 
         return direction;
