@@ -34,7 +34,6 @@ public class Knight extends Character {
         this.lives = lives;
         this.time = time;
         this.win = win;
-        this.downLooking = "src/img/warrior/warrior_down.gif";
     }
 
     /**

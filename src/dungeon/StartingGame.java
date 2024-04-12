@@ -1,11 +1,10 @@
-package dungeon.jDialogs;
+package dungeon;
 
 import classes.*;
 import classes.characters.Character;
 import classes.characters.Necromancer;
 import classes.characters.PlagueDoctor;
 import classes.characters.Knight;
-import dungeon.Dungeon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,13 +14,13 @@ import java.awt.event.*;
  * creado para almacenar ALL lo referente al JDialog de inicio extiende JDialog
  */
 public class StartingGame extends JDialog {
-    private JPanel contentPane = new JPanel();
+    private JPanel contentPane;
+    private JButton buttonOK;
+    private JButton buttonCancel;
 
     private JButton buttonNecromancer = new JButton();
     private JButton buttonKnight = new JButton();
     private JButton buttonPlagueDoctor = new JButton();
-
-    private  JButton buttonRanking = new JButton();
 
     Necromancer necromancer = new Necromancer();
     Knight knight = new Knight();
@@ -69,8 +68,7 @@ public class StartingGame extends JDialog {
 
         setContentPane(contentPane);
         setModal(true);
-
-        buttonRankingCreation();
+        getRootPane().setDefaultButton(buttonOK);
 
 
         titleTextCreation();
@@ -96,13 +94,6 @@ public class StartingGame extends JDialog {
 
 
 
-    }
-
-    private void buttonRankingCreation() {
-
-        creatingButton(buttonRanking, "Ranking");
-        buttonRanking.setLocation(430,540);
-        buttonRanking.addMouseListener(new ButtonRankingListener());
     }
 
     /**
@@ -224,23 +215,6 @@ public class StartingGame extends JDialog {
         public void mouseClicked(MouseEvent e) {
             Dungeon.character = this.character;
             choosingSure(this.character);
-        }
-    }
-
-    private class ButtonRankingListener extends MouseAdapter {
-
-        Character character;
-        public ButtonRankingListener() {
-
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-
-           // FilesRW.showRanking();
-
-            JDialog ranking = new Ranking();
-            ranking.setVisible(true);
         }
     }
 

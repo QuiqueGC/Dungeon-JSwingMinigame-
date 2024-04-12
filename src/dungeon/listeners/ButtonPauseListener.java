@@ -1,11 +1,10 @@
 package dungeon.listeners;
+import classes.FilesRW;
 import classes.Labels;
-import classes.characters.Character;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 
 /**
@@ -13,7 +12,6 @@ import java.util.ArrayList;
  */
 public class ButtonPauseListener extends MouseAdapter {
 
-    ArrayList<Character> rankingList = new ArrayList<>();
     Timer[] timers = new Timer [12];
 
 
@@ -24,7 +22,7 @@ public class ButtonPauseListener extends MouseAdapter {
     public ButtonPauseListener(Timer[] timers, JPanel panel) {
 
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 12; i++) {
 
             this.timers[i] = timers[i];
         }
@@ -43,21 +41,18 @@ public class ButtonPauseListener extends MouseAdapter {
         //  super.mouseClicked(e);
         if (Labels.buttonPause.getText().equals("Pausa")) {
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 12; i++) {
 
                 timers[i].stop();
             }
 
-            //FilesRW.rankingListCreator(rankingList);
-
-           // JDialog rankingPlayer = new RankingPlayer();
-           // rankingPlayer.setVisible(true);
+            FilesRW.showRanking();
 
             Labels.buttonPause.setText("Reanudar");
 
         } else {
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 12; i++) {
 
                 timers[i].start();
             }

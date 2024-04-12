@@ -58,7 +58,7 @@ public class Dungeon {
         PriestessSkeleton priestessSkel = new PriestessSkeleton();
         PriestessSkeleton priestessSkel2 = new PriestessSkeleton();
         Dragon dragon = new Dragon();
-        Timer[] timers = new Timer[10];
+        Timer[] timers = new Timer[12];
 
 
         Panels.createPanelMain(panelMain);
@@ -82,23 +82,23 @@ public class Dungeon {
 
         //timers de monstruos
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
             //creo la variable j porque los timers van un nivel de índice por encima de los otros arrays
             int j = i+1;
             timers[j] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(i),Labels.labelsHitBoxMonsters.get(i), skel));
         }
-        timers[5] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(4),Labels.labelsHitBoxMonsters.get(4), priestessSkel));
-        timers[6] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(5),Labels.labelsHitBoxMonsters.get(5), priestessSkel2));
-        timers[7] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(6),Labels.labelsHitBoxMonsters.get(6), warriorSkel));
-        timers[8] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(7),Labels.labelsHitBoxMonsters.get(7), warriorSkel2));
-        timers[9] = new Timer(50, new TimerActionDragon(dragon));
+        timers[7] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(6),Labels.labelsHitBoxMonsters.get(6), priestessSkel));
+        timers[8] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(7),Labels.labelsHitBoxMonsters.get(7), priestessSkel2));
+        timers[9] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(8),Labels.labelsHitBoxMonsters.get(8), warriorSkel));
+        timers[10] = new Timer(50, new TimerMovementSkeletons(Labels.labelsSkels.get(9),Labels.labelsHitBoxMonsters.get(9), warriorSkel2));
+        timers[11] = new Timer(50, new TimerActionDragon(dragon));
 
 
         //timer de victoria o derrota
         Timer timerLoosing = new Timer(10, new TimerLoosingAndWinning(frame, panelMain, timers, connectionDB));
 
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 12; i++) {
             timers[i].start();
         }
 

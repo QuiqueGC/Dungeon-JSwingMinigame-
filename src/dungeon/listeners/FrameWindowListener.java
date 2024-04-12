@@ -1,7 +1,7 @@
 package dungeon.listeners;
 import classes.*;
 import dungeon.Dungeon;
-import dungeon.jDialogs.StartingGame;
+import dungeon.StartingGame;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;

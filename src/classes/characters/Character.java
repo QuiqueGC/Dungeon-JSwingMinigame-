@@ -196,7 +196,7 @@ public abstract class Character implements Comparable {
             }
         }
         Labels.labelCharacter.setLocation(Labels.TILE_SIZE * 3, Labels.TILE_SIZE * 17);
-        Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.HIT_BOX_DIFFERENCE/2, Labels.labelCharacter.getY() + Labels.HIT_BOX_DIFFERENCE/2);
+        Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.hitBoxDiference, Labels.labelCharacter.getY() + Labels.hitBoxDiference);
 
 
         if (this.lives <= 0) {
@@ -312,7 +312,7 @@ public abstract class Character implements Comparable {
         }
         if (!wallCollision) {
             Labels.labelCharacter.setLocation(x, Labels.labelCharacter.getY());
-            Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.HIT_BOX_DIFFERENCE/2, Labels.labelCharacter.getY() + Labels.HIT_BOX_DIFFERENCE/2);
+            Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.hitBoxDiference, Labels.labelCharacter.getY() + Labels.hitBoxDiference);
         }
 
     }
@@ -340,7 +340,7 @@ public abstract class Character implements Comparable {
         }
         if (!wallCollision) {
             Labels.labelCharacter.setLocation(x, Labels.labelCharacter.getY());
-            Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.HIT_BOX_DIFFERENCE/2, Labels.labelCharacter.getY() + Labels.HIT_BOX_DIFFERENCE/2);
+            Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.hitBoxDiference, Labels.labelCharacter.getY() + Labels.hitBoxDiference);
         }
 
     }
@@ -368,8 +368,9 @@ public abstract class Character implements Comparable {
         }
         if (!wallCollision) {
             Labels.labelCharacter.setLocation(Labels.labelCharacter.getX(), y);
-            Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.HIT_BOX_DIFFERENCE/2, Labels.labelCharacter.getY() + Labels.HIT_BOX_DIFFERENCE/2);
+            Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.hitBoxDiference, Labels.labelCharacter.getY() + Labels.hitBoxDiference);
         }
+
 
     }
 
@@ -398,7 +399,7 @@ public abstract class Character implements Comparable {
         }
         if (!wallCollision) {
             Labels.labelCharacter.setLocation(Labels.labelCharacter.getX(), y);
-            Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.HIT_BOX_DIFFERENCE/2, Labels.labelCharacter.getY() + Labels.HIT_BOX_DIFFERENCE/2);
+            Labels.labelHitBoxCharacter.setLocation(Labels.labelCharacter.getX() + Labels.hitBoxDiference, Labels.labelCharacter.getY() + Labels.hitBoxDiference);
         }
 
     }
@@ -447,6 +448,7 @@ public abstract class Character implements Comparable {
                 value = 1;
                 return value;
             }
+
 
         } else {
             throw new ClassCastException();

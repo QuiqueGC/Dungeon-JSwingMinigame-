@@ -34,7 +34,6 @@ public class PlagueDoctor extends Character {
         this.lives = lives;
         this.time = time;
         this.win = win;
-        this.downLooking = "src/img/priest/priest_down.gif";
     }
     /**
      * lo que ocurre cuando el médico de la plaga entra en contacto con un montruo

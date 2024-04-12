@@ -23,7 +23,7 @@ public class Labels {
     //el botón de pausa (no sé en qué clase meterlo)
     public static JButton buttonPause;
 
-    public static int HIT_BOX_DIFFERENCE = 12;
+    public static int hitBoxDiference = 12;
 
     public static final int TILE_SIZE = 32;
 
@@ -268,7 +268,7 @@ public class Labels {
         labelDragon.setLocation(Panels.panelGaming.getWidth(), Panels.panelGaming.getHeight());
         //hitBox del dragón
         labelHitBoxDragon = new JLabel();
-        labelHitBoxDragon.setSize(labelDragon.getWidth()- HIT_BOX_DIFFERENCE,labelDragon.getHeight()- HIT_BOX_DIFFERENCE);
+        labelHitBoxDragon.setSize(labelDragon.getWidth()-hitBoxDiference,labelDragon.getHeight()-hitBoxDiference);
         Panels.panelGaming.add(labelHitBoxDragon);
 
 
@@ -296,20 +296,20 @@ public class Labels {
 
         //hitBox del personaje
         labelHitBoxCharacter = new JLabel();
-        labelHitBoxCharacter.setSize(labelCharacter.getWidth()- HIT_BOX_DIFFERENCE,labelCharacter.getHeight()- HIT_BOX_DIFFERENCE);
-        labelHitBoxCharacter.setLocation(labelCharacter.getX()+ HIT_BOX_DIFFERENCE, labelCharacter.getY()+ HIT_BOX_DIFFERENCE);
+        labelHitBoxCharacter.setSize(labelCharacter.getWidth()-hitBoxDiference,labelCharacter.getHeight()-hitBoxDiference);
+        labelHitBoxCharacter.setLocation(labelCharacter.getX()+hitBoxDiference, labelCharacter.getY()+hitBoxDiference);
         Panels.panelGaming.add(labelHitBoxCharacter);
 
 
         //labels de monstruos y sus hitBox
          labelsSkels = new ArrayList<>();
         labelsHitBoxMonsters = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 10; i++) {
             labelHitBoxMonster = new JLabel();
             labelSkeleton = new JLabel();
             Maps.labelIconCreation(labelSkeleton, null, 32, 48, Panels.panelGaming);
             labelsSkels.add(labelSkeleton);
-            labelHitBoxMonster.setSize(labelSkeleton.getWidth()- HIT_BOX_DIFFERENCE,labelSkeleton.getHeight()- HIT_BOX_DIFFERENCE);
+            labelHitBoxMonster.setSize(labelSkeleton.getWidth()-hitBoxDiference,labelSkeleton.getHeight()-hitBoxDiference);
             labelsHitBoxMonsters.add(labelHitBoxMonster);
         }
 
@@ -352,9 +352,9 @@ public class Labels {
         ) {
             Maps.checkingDeployimentColissionBorn(m);
         }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
 
-            labelsHitBoxMonsters.get(i).setLocation(labelsSkels.get(i).getX()+ HIT_BOX_DIFFERENCE, labelsSkels.get(i).getY()+ HIT_BOX_DIFFERENCE);
+            labelsHitBoxMonsters.get(i).setLocation(labelsSkels.get(i).getX()+hitBoxDiference, labelsSkels.get(i).getY()+hitBoxDiference);
         }
 
     }

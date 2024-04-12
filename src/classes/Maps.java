@@ -103,7 +103,7 @@ public class Maps {
 
         gamingTable =
                 new int[][]{{10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 17, 13, 14, 1, 1, 1, 3},
-                        {9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {9, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 16, 0, 15, 2, 2, 2, 4},
                         {8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5},
                         {8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5},
                         {8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 1, 1, 1, 1, 3, 0, 0, 0, 5},
@@ -112,7 +112,7 @@ public class Maps {
                         {8, 0, 0, 0, 0, 0, 0, 35, 0, 0, 0, 0, 10, 1, 1, 1, 1, 0, 0, 0, 0, 35, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5},
                         {8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 29, 18, 19, 20, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5},
                         {8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 8, 0, 0, 0, 0, 28, 30, 31, 21, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5},
-                        {8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 7, 0, 0, 0, 0, 27, 33, 32, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 5},
+                        {8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 5},
                         {8, 0, 0, 10, 1, 1, 1, 0, 0, 0, 5, 0, 0, 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 0, 0, 0, 0, 4, 0, 0, 5},
                         {8, 0, 0, 9, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 0, 0, 0, 0, 5, 0, 0, 5},
                         {8, 0, 0, 8, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 5},
@@ -235,16 +235,6 @@ public class Maps {
                         Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
                         //Labels.walls.add(Labels.labelFloor);
                         break;
-                    case 22:
-                        Maps.labelIconCreation(Labels.labelFloor, "src/img/muro/arbol/22_Dab.png", Labels.TILE_SIZE, Labels.TILE_SIZE, Panels.panelGaming);
-                        Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
-                        Labels.walls.add(Labels.labelFloor);
-                        break;
-                    case 27:
-                        Maps.labelIconCreation(Labels.labelFloor, "src/img/muro/arbol/27_IAb.png", Labels.TILE_SIZE, Labels.TILE_SIZE, Panels.panelGaming);
-                        Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
-                        Labels.walls.add(Labels.labelFloor);
-                        break;
                     case 28:
                         Maps.labelIconCreation(Labels.labelFloor, "src/img/muro/arbol/28_IAr.png", Labels.TILE_SIZE, Labels.TILE_SIZE, Panels.panelGaming);
                         Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
@@ -315,7 +305,7 @@ public class Maps {
 
         gamingTable2 =
                 new int[][]{{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                        {0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 16, 0, 15, 2, 2, 2, 4},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0},
@@ -353,11 +343,6 @@ public class Maps {
                         Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
                         Labels.walls.add(Labels.labelFloor);
                         break;
-                    case 9:
-                        Maps.labelIconCreation(Labels.labelFloor, "src/img/muro/9_izqAr.png", Labels.TILE_SIZE, Labels.TILE_SIZE, Panels.panelGaming);
-                        Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
-                        Labels.walls.add(Labels.labelFloor);
-                        break;
                     case 11:
                         Maps.labelIconCreation(Labels.labelFloor, "src/img/muro/11_baseAbD.png", Labels.TILE_SIZE, Labels.TILE_SIZE, Panels.panelGaming);
                         Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
@@ -365,16 +350,6 @@ public class Maps {
                         break;
                     case 12:
                         Maps.labelIconCreation(Labels.labelFloor, "src/img/muro/12_baseAbI.png", Labels.TILE_SIZE, Labels.TILE_SIZE, Panels.panelGaming);
-                        Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
-                        Labels.walls.add(Labels.labelFloor);
-                        break;
-                    case 15:
-                        Maps.labelIconCreation(Labels.labelFloor, "src/img/muro/puerta/15_puertaAbajoD.png", Labels.TILE_SIZE, Labels.TILE_SIZE, Panels.panelGaming);
-                        Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
-                        Labels.walls.add(Labels.labelFloor);
-                        break;
-                    case 16:
-                        Maps.labelIconCreation(Labels.labelFloor, "src/img/muro/puerta/16_puertaAbajoI.png", Labels.TILE_SIZE, Labels.TILE_SIZE, Panels.panelGaming);
                         Labels.labelFloor.setLocation(tilePositionX, tilePositionY);
                         Labels.walls.add(Labels.labelFloor);
                         break;
